@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ShareFy",
+  title: "CosmoDrop",
   description: "Fast, secure, no-storage file sharing",
 };
 

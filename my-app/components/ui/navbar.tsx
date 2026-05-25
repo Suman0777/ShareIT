@@ -14,7 +14,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-1.5 left-0 right-0 z-50 flex items-center px-6 pt-5">
+    <nav className="fixed top-2 left-0 right-0 z-50 flex items-center px-6 pt-5">
   
   {/* Centered nav pill */}
   <div className="absolute left-1/2 -translate-x-1/2">

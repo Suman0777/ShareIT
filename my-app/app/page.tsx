@@ -2,15 +2,22 @@
 
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
-import { SendHorizonal, Download, ShieldCheck, Zap, ServerOff, UserX } from "lucide-react";
+import {
+  SendHorizonal,
+  Download,
+  ShieldCheck,
+  Zap,
+  ServerOff,
+  UserX,
+} from "lucide-react";
 import { DiaTextReveal } from "@/components/ui/dia-text-reveal";
 import { LineShadowText } from "@/components/ui/line-shadow-text";
 
 const stats = [
   { icon: ShieldCheck, label: "End-to-End Secure" },
-  { icon: Zap,         label: "Instant Transfer"  },
-  { icon: ServerOff,   label: "Zero Storage"      },
-  { icon: UserX,       label: "No Sign-up"        },
+  { icon: Zap, label: "Instant Transfer" },
+  { icon: ServerOff, label: "Zero Storage" },
+  { icon: UserX, label: "No Sign-up" },
 ];
 
 const features = [
@@ -29,7 +36,7 @@ const features = [
   {
     title: "Privacy First",
     desc: "Your files are encrypted in transit and never stored. We respect your privacy.",
-  }
+  },
 ];
 
 export default function Home() {
@@ -37,10 +44,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col flex-1 ">
-
       {/* ── CHUNK 1 · Hero ── */}
       <section className="mt-7 flex flex-col items-center justify-center min-h-screen text-center gap-5">
-
         {/* badge */}
         <motion.span
           initial={{ opacity: 0, y: -10 }}
@@ -56,11 +61,14 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="text-6xl md:text-8xl font-bold tracking-tight text-violet-400/90 leading-none"
+          className="text-6xl md:text-8xl font-bold tracking-tight text-[#6ee7b7]/70 leading-none font-serif"
         >
-          Share
-          <LineShadowText shadowColor="rgba(59,170,60,0.8)" className="text-white">
-            Fy
+          Cosmo
+          <LineShadowText
+            shadowColor="#6ee7b7"
+            className="text-white font-serif"
+          >
+            Drop
           </LineShadowText>
         </motion.h1>
 
@@ -75,7 +83,7 @@ export default function Home() {
         </motion.p>
 
         {/* animated reveal text */}
-        <p className="text-base md:text-lg text-white/60 font-mono">
+        <p className="text-base md:text-[17px] text-white/60 font-mono">
           <DiaTextReveal
             text="Share files instantly. No login. No storage. Just share."
             colors={["#3b8264", "#6ee7b7", "#34d399", "#a7f3d0", "#3b8264"]}
@@ -89,7 +97,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="flex gap-4 mt-2 mb-7"
+          className="flex gap-9 mt-2 mb-7"
         >
           <button
             onClick={() => router.push("/Send")}
@@ -120,10 +128,10 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.85 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.7 + i * 0.1, duration: 0.4 }}
-              className="flex flex-col items-center gap-2.5 px-5 py-3 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-[rgba(59,130,100,0.4)] hover:bg-white/10 transition-all cursor-default"
+              className="flex flex-col items-center gap-2.5 px-7 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-[rgba(59,130,100,0.4)] hover:bg-white/10 transition-all cursor-default"
             >
               <Icon size={20} className="text-[#6ee7b7]" />
-              <span className="text-lg text-white/70 font-medium">{label}</span>
+              <span className="text-[18px] text-white/50 font-medium ">{label}</span>
             </motion.div>
           ))}
         </motion.div>
@@ -135,7 +143,9 @@ export default function Home() {
           transition={{ delay: 1.2, duration: 0.6 }}
           className="mt-5 flex flex-col items-center gap-1"
         >
-          <span className="text-white/20 text-xs tracking-widest uppercase">scroll</span>
+          <span className="text-white/20 text-xs tracking-widest uppercase">
+            scroll
+          </span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ repeat: Infinity, duration: 1.4, ease: "easeInOut" }}
@@ -154,7 +164,18 @@ export default function Home() {
           className="text-3xl md:text-4xl font-bold text-white/90 text-center"
         >
           Why{" "}
-          <span className="text-[#6ee7b7]">ShareFy</span>?
+          <span className="text-[#6ee7b7]">
+            Cosmo
+            <span className="text-white">
+              <LineShadowText
+                shadowColor="#6ee7b7"
+                className="text-white font-serif"
+              >
+                Drop
+              </LineShadowText>
+            </span>
+          </span>
+          ?
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-6xl">
@@ -167,7 +188,9 @@ export default function Home() {
               transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
               className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 items-center flex flex-col gap-3 hover:border-[rgba(59,130,100,0.5)] hover:bg-white/10 transition-all"
             >
-              <h3 className="text-lg font-semibold text-[#6ee7b7]">{f.title}</h3>
+              <h3 className="text-lg font-semibold text-[#6ee7b7]">
+                {f.title}
+              </h3>
               <p className="text-sm text-white/55 leading-relaxed">{f.desc}</p>
             </motion.div>
           ))}
@@ -175,13 +198,12 @@ export default function Home() {
       </section>
 
       {/* ── CHUNK 3 · Footer ── */}
-      <footer className=" flex justify-center gap-7 text-center text-white/25 text-sm space-y-1 pt-4  border-t border-white/5">
+      <footer className=" flex justify-center gap-3 text-white/25 text-sm space-y-1 pt-4  border-t border-white/5">
         <p>
           Made with <span className="text-red-400">♥</span> by Suman
         </p>
-        <p>© {new Date().getFullYear()} ShareFy · All rights reserved.</p>
+        <p>© {new Date().getFullYear()} CosmoDrop · All rights reserved.</p>
       </footer>
-
     </div>
   );
 }
