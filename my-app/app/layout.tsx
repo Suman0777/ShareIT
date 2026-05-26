@@ -29,13 +29,13 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white">
-        {/* Fixed full-screen background */}
-        <div className="fixed inset-0 z-0 bg-black">
+      <body className="min-h-full flex flex-col bg-black text-white [touch-action:pan-y] overscroll-none">
+        {/* Fixed full-screen background — will-change isolates to compositor thread */}
+        <div className="fixed inset-0 z-0 bg-black" style={{ willChange: "transform" }}>
           <LightRays
             color="rgba(59, 130, 100, 0.35)"
-            speed={5}
-            count={20}
+            speed={6}
+            count={10}
             blur={48}
           />
         </div>

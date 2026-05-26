@@ -132,8 +132,16 @@
   }
   body {
     @apply bg-background text-foreground;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
   }
   html {
     @apply font-sans;
+    scroll-behavior: smooth;
+  }
+  /* Promote fixed bg to its own compositor layer */
+  .fixed {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 }

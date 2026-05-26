@@ -47,7 +47,7 @@ export function Navbar() {
 
         {/* Desktop GitHub button — hidden on mobile */}
         <motion.a
-          href="https://github.com"
+          href="https://github.com/Suman0777/CosmoDrop"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub"
@@ -162,7 +162,7 @@ export function Navbar() {
                 transition={{ delay: 0.32, duration: 0.3 }}
               >
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Suman0777/CosmoDrop"
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
