@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 ">
       {/* ── CHUNK 1 · Hero ── */}
-      <section className="mt-7 flex flex-col items-center justify-center min-h-screen text-center gap-5">
+      <section className="mt-9 mx-8 flex flex-col items-center justify-center min-h-screen text-center gap-5 md:mt-7">
         {/* badge */}
         <motion.span
           initial={{ opacity: 0, y: -10 }}
@@ -97,11 +97,11 @@ export default function Home() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="flex gap-9 mt-2 mb-7"
+          className="mt-4 flex gap-9 md:mt-2 mb-7"
         >
           <button
             onClick={() => router.push("/Send")}
-            className="flex items-center gap-2 px-7 py-3 rounded-full bg-[rgba(59,130,100,0.75)] hover:bg-[rgba(59,130,100,1)] border border-[rgba(59,130,100,0.5)] text-white font-semibold text-sm transition-all hover:scale-105 active:scale-95 backdrop-blur-sm shadow-lg shadow-[rgba(59,130,100,0.2)]"
+            className=" flex items-center gap-2 px-7 py-3 rounded-full bg-[rgba(59,130,100,0.75)] hover:bg-[rgba(59,130,100,1)] border border-[rgba(59,130,100,0.5)] text-white font-semibold text-sm transition-all hover:scale-105 active:scale-95 backdrop-blur-sm shadow-lg shadow-[rgba(59,130,100,0.2)]"
           >
             <SendHorizonal size={15} />
             Send
@@ -120,7 +120,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-20 mt-6"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-8 w-full max-w-3xl"
         >
           {stats.map(({ icon: Icon, label }, i) => (
             <motion.div
@@ -131,7 +131,9 @@ export default function Home() {
               className="flex flex-col items-center gap-2.5 px-7 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-[rgba(59,130,100,0.4)] hover:bg-white/10 transition-all cursor-default"
             >
               <Icon size={20} className="text-[#6ee7b7]" />
-              <span className="text-[18px] text-white/50 font-medium ">{label}</span>
+              <span className="text-[18px] text-white/50 font-medium ">
+                {label}
+              </span>
             </motion.div>
           ))}
         </motion.div>
@@ -186,7 +188,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6, ease: "easeOut" }}
-              className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 items-center flex flex-col gap-3 hover:border-[rgba(59,130,100,0.5)] hover:bg-white/10 transition-all"
+              className="mx-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-7 items-center flex flex-col gap-3 hover:border-[rgba(59,130,100,0.5)] hover:bg-white/10 transition-all"
             >
               <h3 className="text-lg font-semibold text-[#6ee7b7]">
                 {f.title}
@@ -198,7 +200,7 @@ export default function Home() {
       </section>
 
       {/* ── CHUNK 3 · Footer ── */}
-      <footer className=" flex justify-center gap-3 text-white/25 text-sm space-y-1 pt-4  border-t border-white/5">
+      <footer className="pb-4 flex flex-col md:flex-row items-center justify-center text-center text-white/25 text-sm gap-1 md:gap-6 pt-4 border-t border-white/5">
         <p>
           Made with <span className="text-red-400">♥</span> by Suman
         </p>
